@@ -36,7 +36,7 @@ ListView.builder(
     return MultiSelectItem(
       isSelecting: controller.isSelecting,
       
-      //the function that will be called when item is selected
+      //the function that will be called when item is long-tapped/tapped
       onSelected: () {
         setState(() {
           controller.toggle(index);
