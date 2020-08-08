@@ -14,6 +14,7 @@ MultiSelectController controller = new MultiSelectController();
 
 Then set the controller length from your list length
 ```dart
+//your list here, can be what ever you want.
 mainList.add({"key": "1"});
 mainList.add({"key": "2"});
 mainList.add({"key": "3"});
