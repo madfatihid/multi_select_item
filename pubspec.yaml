@@ -1,7 +1,7 @@
 name: multi_select_item
 description: A new flutter plugin project.
-version: 0.0.1
-homepage:
+version: 1.0.0
+homepage: https://github.com/indokan2001/multi_select_item
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
