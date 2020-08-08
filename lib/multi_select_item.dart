@@ -14,7 +14,7 @@ class MultiSelectController {
   }
 
   /// Returns true if the id is selected
-  bool isSelected(int i){
+  bool isSelected(int i) {
     return selectedIndexes.contains(i);
   }
 
@@ -97,7 +97,6 @@ class MultiSelectItem extends StatefulWidget {
 }
 
 class _MultiSelectItemState extends State<MultiSelectItem> {
-
   @override
   Widget build(BuildContext context) {
     return new GestureDetector(
@@ -113,5 +112,3 @@ class _MultiSelectItemState extends State<MultiSelectItem> {
     );
   }
 }
-
-
