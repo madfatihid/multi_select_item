@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/multi_select_item.iml" filepath="$PROJECT_DIR$/multi_select_item.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/multi_select_item_android.iml" filepath="$PROJECT_DIR$/android/multi_select_item_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/multi_select_item_example_android.iml" filepath="$PROJECT_DIR$/example/android/multi_select_item_example_android.iml" />
+    </modules>
+  </component>
+</project>
