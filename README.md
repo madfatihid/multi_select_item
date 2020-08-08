@@ -2,6 +2,9 @@
 
 Multi select view item controller for GridView and ListView in Flutter
 
+
+![](https://i.imgur.com/y0L5eSi.gif)
+
 ## Getting Started
 For this to work. You need to write
 First define the controller first
