@@ -24,7 +24,9 @@ controller.set(mainList.length);
 ```
 Finally you can use it with list builder. For this plugin to work, you need to provide the `MultiSelectItem` widget with `isSelecting` parameter and `onSelected` parameter.
 - the `isSelecting` parameter will be used to tell the widget from the controller wether it's in multi selecting mode or not.
-- the `onSelected` parameter will be used to select the item that is selected by the user.
+- the `onSelected` parameter is a function. The function will be called depending wether it's in multi selecting mode (`isSelecting == true`) or not.
+  - if `isSelecting` is true, then the function will be called when user tap on the MultiSelectItem widget
+  - if `isSelecting` is false, then the function will be called when user longtap on the MultiSelectItem widget
 
 So in basic, it will look like this:
 ```dart
@@ -84,6 +86,24 @@ setState(() {
   controller.set(mainList.length);
 });
 ```
+
+## Keep in Selecting Mode
+Sometimes, you don't want to quit multi selecting mode even no item is selected. To do this, add and set `disableEditingWhenNoneSelected` to false.
+```dart
+controller.disableEditingWhenNoneSelected = false;
+controller.set(mainList.length);
+```
+
+### Enter Selecting Mode Manually
+You can enter selecting mode by changing parameter `isSelecting` of the controller to true.\
+Don't forget to use `setState()`!
+```dart
+setState(() {
+  controller.isSelecting = true;
+});
+```
+
+ 
  
 ## MultiSelectItem Parameters
 MultiSelectItem is a widget that handles the multi selecting. Wrap this widget inside listbuilder item.
@@ -96,7 +116,7 @@ final bool isSelecting;
 
 //function that will be called based on isSelecting variable.
 //if isSelecting is true, then the function will be called when user tap on the MultiSelectItem widget
-//if isSelecting is false, then the function will be called when user longtap on the MultiSelectItem widget
+//if isSelecting is false, then the function will be called when user long tap on the MultiSelectItem widget
 final VoidCallback onSelected;
 ```
 
