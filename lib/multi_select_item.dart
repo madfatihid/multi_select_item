@@ -12,7 +12,7 @@ class MultiSelectController {
     isSelecting = false;
     selectedIndexes.clear();
   }
-  
+
   /// Returns true if the id is selected
   bool isSelected(int i){
     return selectedIndexes.contains(i);
@@ -84,14 +84,12 @@ class MultiSelectItem extends StatefulWidget {
   final Widget child;
   final bool isSelecting;
   final VoidCallback onSelected;
-  // final MultiSelectItemController controller;
 
   const MultiSelectItem({
     Key key,
     this.child,
-    this.isSelecting,
-    this.onSelected,
-    // this.controller,
+    @required this.isSelecting,
+    @required this.onSelected,
   }) : super(key: key);
 
   @override
@@ -99,7 +97,6 @@ class MultiSelectItem extends StatefulWidget {
 }
 
 class _MultiSelectItemState extends State<MultiSelectItem> {
-  // bool selected = false;
 
   @override
   Widget build(BuildContext context) {

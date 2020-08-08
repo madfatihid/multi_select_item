@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: Container(
                   child: ListTile(
-                    title: new Text("Title ${mainList[index]['key']}"),
+                    title: new Text(" Title ${mainList[index]['key']}"),
                     subtitle: new Text("Description ${mainList[index]['key']}"),
                   ),
                   decoration: controller.isSelected(index)
