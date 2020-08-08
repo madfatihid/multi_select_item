@@ -22,9 +22,9 @@ mainList.add({"key": "4"});
 
 controller.set(mainList.length);
 ```
-Finally you can use it with list builder. For this plugin to work, you need to provide the `MultiSelectItem` widget with `isSelecting` parameter and `onSelected` parameter.\
-the `isSelecting` parameter will be used to tell the widget from the controller wether it's in multi selecting mode or not.\
-the `onSelected` parameter will be used to select the item that is selected by the user.
+Finally you can use it with list builder. For this plugin to work, you need to provide the `MultiSelectItem` widget with `isSelecting` parameter and `onSelected` parameter.
+- the `isSelecting` parameter will be used to tell the widget from the controller wether it's in multi selecting mode or not.
+- the `onSelected` parameter will be used to select the item that is selected by the user.
 
 So in basic, it will look like this:
 ```dart
@@ -46,7 +46,7 @@ ListView.builder(
           subtitle: new Text("Description ${mainList[index]['key']}"),
         ),
         
-        //change color based on it's selected or not.
+        //change color based on wether the id is selected or not.
         decoration: controller.isSelected(index)
             ? new BoxDecoration(color: Colors.grey[300])
             : new BoxDecoration(),
@@ -61,7 +61,7 @@ print(controller.selectedIndexes.toString());
 ```
 
 ## Changing List
-If you ever change the list wether adding or removing item in it, don't forget to call `set()` with `setState()` to update the controller.
+If you ever change the list wether adding or removing item in it, don't forget to call `set()` with `setState()` and pass in your list's `length` to update the controller.
 ```dart
 mainList.add({"key": mainList.length + 1});
 
@@ -112,3 +112,15 @@ bool isSelecting = false;
 //if set to false, it will not get out from multi selecting mode if no item are selected
 bool disableEditingWhenNoneSelected = true;
 ```
+
+## MultiSelectController Functions
+| Function    | Return Type | Parameter | Description                                                                             |
+|-------------|-------------|-----------|-----------------------------------------------------------------------------------------|
+| set         | void        |           | set the controller length                                                               |
+| isSelected  | `bool`      | `int i`   | returns if the specified id is being selected or not                                    |
+| select      | void        | `int i`   | select specified id                                                                     |
+| deselect    | void        | `int i`   | deselect specified id                                                                   |
+| toggle      | void        | `int i`   | toggle specified id                                                                     |
+| selectAll   | void        |           | select all                                                                              |
+| deselectAll | void        |           | deselect all                                                                            |
+| toggleAll   | void        |           | select all if not all list item is selected. deselect all if all list item is selected. |
