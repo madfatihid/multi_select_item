@@ -59,7 +59,7 @@ Now you can multi select and get the selected indexes:
 print(controller.selectedIndexes.toString());
 ```
 
-### Changing List
+## Changing List
 If you ever change the list wether adding or removing item in it, don't forget to call `set()` with `setState()` to update the controller.
 ```dart
 mainList.add({"key": mainList.length + 1});
@@ -69,7 +69,7 @@ setState(() {
 });
 ```
  
-### Removing Item from List
+## Removing Item from List
 Removing item can be tricky. When we select items, it will store the index in `selectedIndexes` list, but it will order by last selected. As such, it will cause error if we just loop through the list and delete one by one. To avoid this, reorder the list from biggest id to smallest id first and then delete one by one.
 ```dart
 var list = controller.selectedIndexes;
@@ -84,7 +84,7 @@ setState(() {
 });
 ```
  
-### MultiSelectItem Parameters
+## MultiSelectItem Parameters
 MultiSelectItem is a widget that handles the multi selecting. Wrap this widget inside listbuilder item.
 ```dart
 //child widget to pass
@@ -99,7 +99,7 @@ final bool isSelecting;
 final VoidCallback onSelected;
 ```
 
-### MultiSelectController Parameters
+## MultiSelectController Parameters
 MultiSelectController is a controller that hadles the state of the multi selecting.
 ```dart
 //list of selected indexes
