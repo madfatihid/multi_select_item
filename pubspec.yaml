@@ -1,6 +1,6 @@
 name: multi_select_item
-description: A new flutter plugin project.
-version: 1.0.0
+description: Multi select view item controller for GridView and ListView in Flutter
+version: 1.0.1
 homepage: https://github.com/indokan2001/multi_select_item
 
 environment:
