@@ -84,12 +84,14 @@ class MultiSelectItem extends StatefulWidget {
   final Widget child;
   final bool isSelecting;
   final VoidCallback onSelected;
+  final VoidCallback onTap;
 
   const MultiSelectItem({
     Key key,
     this.child,
     @required this.isSelecting,
     @required this.onSelected,
+    this.onTap
   }) : super(key: key);
 
   @override
@@ -106,6 +108,8 @@ class _MultiSelectItemState extends State<MultiSelectItem> {
       onTap: () {
         if (widget.isSelecting) {
           widget.onSelected();
+        }else {
+          widget.onTap();
         }
       },
       child: widget.child,
