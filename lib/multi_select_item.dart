@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MultiSelectController {
-  List<int> selectedIndexes = new List();
+  List<int> selectedIndexes = [];
   bool isSelecting = false;
   bool disableEditingWhenNoneSelected = true;
   int listLength = 0;
@@ -81,15 +81,15 @@ class MultiSelectController {
 }
 
 class MultiSelectItem extends StatefulWidget {
-  final Widget child;
+  final Widget? child;
   final bool isSelecting;
   final VoidCallback onSelected;
 
   const MultiSelectItem({
-    Key key,
+    Key? key,
     this.child,
-    @required this.isSelecting,
-    @required this.onSelected,
+    required this.isSelecting,
+    required this.onSelected,
   }) : super(key: key);
 
   @override
