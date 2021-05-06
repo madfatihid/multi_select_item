@@ -22,7 +22,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List mainList = new List();
+  List mainList = [];
   MultiSelectController controller = new MultiSelectController();
 
   @override

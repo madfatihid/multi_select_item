@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
 class MultiSelectController {
-  List<int> selectedIndexes = new List();
+  List<int?> selectedIndexes = <int>[];
   bool isSelecting = false;
   bool disableEditingWhenNoneSelected = true;
   int listLength = 0;
 
   /// Sets the controller length
-  void set(int i) {
-    listLength = i;
+  void set(int? i) {
+    listLength = i!;
     isSelecting = false;
     selectedIndexes.clear();
   }
 
   /// Returns true if the id is selected
-  bool isSelected(int i) {
+  bool isSelected(int? i) {
     return selectedIndexes.contains(i);
   }
 
@@ -44,7 +44,7 @@ class MultiSelectController {
   }
 
   /// Toggle at index
-  void toggle(int index) {
+  void toggle(int? index) {
     if (selectedIndexes.contains(index)) {
       selectedIndexes.remove(index);
     } else {
@@ -59,7 +59,7 @@ class MultiSelectController {
   }
 
   /// Select at index
-  void select(int index) {
+  void select(int? index) {
     if (!selectedIndexes.contains(index)) {
       selectedIndexes.add(index);
     }
@@ -67,7 +67,7 @@ class MultiSelectController {
   }
 
   /// Deselect at index
-  void deselect(int index) {
+  void deselect(int? index) {
     if (selectedIndexes.contains(index)) {
       selectedIndexes.remove(index);
     }
@@ -86,10 +86,10 @@ class MultiSelectItem extends StatefulWidget {
   final VoidCallback onSelected;
 
   const MultiSelectItem({
-    Key key,
-    this.child,
-    @required this.isSelecting,
-    @required this.onSelected,
+    Key? key,
+    required this.child,
+    required this.isSelecting,
+    required this.onSelected,
   }) : super(key: key);
 
   @override
@@ -100,9 +100,8 @@ class _MultiSelectItemState extends State<MultiSelectItem> {
   @override
   Widget build(BuildContext context) {
     return new GestureDetector(
-      onLongPress: () {
-        widget.onSelected();
-      },
+      onLongPress: () =>
+          widget.onSelected(),
       onTap: () {
         if (widget.isSelecting) {
           widget.onSelected();
